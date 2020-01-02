@@ -1,0 +1,16 @@
+{
+  "name": "100-days-of-gatsby",
+  "version": "0.0.0",
+  "description": "One hundred (100) days of Gatsby",
+  "keywords": ["100 days", "gatsby"],
+  "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRobBrennan/100-days-of-gatsby.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheRobBrennan/100-days-of-gatsby/issues"
+  },
+  "homepage": "https://github.com/TheRobBrennan/100-days-of-gatsby#readme"
+}
