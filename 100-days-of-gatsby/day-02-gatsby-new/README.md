@@ -26,8 +26,15 @@ View GraphiQL, an in-browser IDE, to explore your site\'s data and schema
   On Your Network:  http://172.20.0.2:8000/___graphql
 ⠀
 Note that the development build is not optimized.
+```
 
-# When you are ready to spin down the Dockerized project, press CTRL+C and then...
+The default Gatsby starter site should be available at [http://localhost:8000/](http://localhost:8000/):
+
+![images/2020.01.02-gatsby-default-starter.png](images/2020.01.02-gatsby-default-starter.png)
+
+When you are ready to spin down the Dockerized project, press CTRL+C and then...
+
+```sh
 $ npm stop
 
 Removing gatsby-day-02 ... done
