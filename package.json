@@ -9,9 +9,9 @@
     "build": "npm run day-02:build",
     "start": "npm run day-02:start",
     "stop": "npm run day-02:stop",
-    "day-02:build": "cd examples/day-02-gatsby-new && npm run build",
-    "day-02:start": "cd examples/day-02-gatsby-new && npm run start",
-    "day-02:stop": "cd examples/day-02-gatsby-new && npm run stop",
+    "day-02:build": "cd 100-days-of-gatsby/day-02-gatsby-new && npm run build",
+    "day-02:start": "cd 100-days-of-gatsby/day-02-gatsby-new && npm run start",
+    "day-02:stop": "cd 100-days-of-gatsby/day-02-gatsby-new && npm run stop",
     "docker:nuke": "docker system prune -a && docker volume prune"
   },
   "license": "ISC",
