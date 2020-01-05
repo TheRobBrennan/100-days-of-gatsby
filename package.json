@@ -6,8 +6,7 @@
   "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd 100-days-of-gatsby/day-05 && npm run build",
-    "start": "cd 100-days-of-gatsby/day-05 && npm run start",
+    "start": "cd 100-days-of-gatsby/day-05 && npm run build",
     "stop": "cd 100-days-of-gatsby/day-05 && npm run stop",
     "docker:nuke": "docker system prune -a && docker volume prune"
   },
