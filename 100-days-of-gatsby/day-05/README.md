@@ -14,5 +14,4 @@ Next, let's install and configure the `gatsby-plugin-typography` plugin:
 
 ```sh
 $ npm install --save gatsby-plugin-typography react-typography typography typography-theme-fairy-gates
-
 ```
