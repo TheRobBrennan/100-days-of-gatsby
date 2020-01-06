@@ -1,6 +1,8 @@
 # Day 06 - Monday, January 6th, 2020
 
-Today's focus is on the tutorial [Data in Gatsby](https://www.gatsbyjs.org/tutorial/part-four/):
+Today's focus is on the tutorial [Data in Gatsby](https://www.gatsbyjs.org/tutorial/part-four/).
+
+One small change today is that this will likely be the last "100 Days of Gatsby" example where I will be using Docker for development. I'm comfortable enough setting it up based on the previous examples, and quite honestly it's just getting more in the way of things than anything.
 
 ## Scratchpad
 
