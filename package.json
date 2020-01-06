@@ -6,8 +6,9 @@
   "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd 100-days-of-gatsby/day-05 && npm run build",
-    "stop": "cd 100-days-of-gatsby/day-05 && npm run stop",
+    "build": "npm start",
+    "start": "cd 100-days-of-gatsby/day-06 && npm run build",
+    "stop": "cd 100-days-of-gatsby/day-06 && npm run stop",
     "docker:nuke": "docker system prune -a && docker volume prune"
   },
   "license": "ISC",
