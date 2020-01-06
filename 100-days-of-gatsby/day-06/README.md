@@ -9,3 +9,9 @@ Let's use the Gatsby "hello-world" starter for this example:
 ```sh
 $ npx gatsby new app https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
+
+Let's install some dependencies that this tutorial requires:
+
+```sh
+$ npm install --save gatsby-plugin-typography typography react-typography typography-theme-kirkham gatsby-plugin-emotion @emotion/core
+```
