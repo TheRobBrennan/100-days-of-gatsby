@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  gatsby-day-05:
+  gatsby-day-06:
     container_name: gatsby
     build:
       context: ./app
