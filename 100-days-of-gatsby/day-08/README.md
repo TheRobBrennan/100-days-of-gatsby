@@ -30,4 +30,3 @@ $ npm install --save gatsby-transformer-remark
 ```
 
 Then add it to the `gatsby-config.js` like normal.
-
