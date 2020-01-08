@@ -7,8 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm start",
-    "start": "cd 100-days-of-gatsby/day-07 && npm run build",
-    "stop": "cd 100-days-of-gatsby/day-07 && npm run stop",
+    "start": "cd 100-days-of-gatsby/day-08 && npm run build",
+    "stop": "cd 100-days-of-gatsby/day-08 && npm run stop",
     "docker:nuke": "docker system prune -a && docker volume prune"
   },
   "license": "ISC",
