@@ -10,3 +10,19 @@ This tutorial uses the site we created in `day-08` as the starting point:
 # Copy the day 06 example to a new folder
 $ cp -r 100-days-of-gatsby/day-08 100-days-of-gatsby/day-09
 ```
+
+We can verify that we've correctly added a `slug` field to our markdown nodes with the following GraphQL query:
+
+```graphql
+{
+  allMarkdownRemark {
+    edges {
+      node {
+        fields {
+          slug
+        }
+      }
+    }
+  }
+}
+```
