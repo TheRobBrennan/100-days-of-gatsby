@@ -10,4 +10,3 @@ This tutorial uses the site we created in `day-08` as the starting point:
 # Copy the day 06 example to a new folder
 $ cp -r 100-days-of-gatsby/day-08 100-days-of-gatsby/day-09
 ```
-
