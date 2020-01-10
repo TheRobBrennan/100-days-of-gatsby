@@ -27,3 +27,5 @@ From this, we can see that we have a poor Progressive Web App (PWA) score. Inclu
 Another requirement for PWAs is adding offline support by having a service worker run in the background. To enable this functionality, we will use the `gatsby-plugin-offline` plugin.
 
 Next, we want to add page metadata using `react-helmet` and the `gatsby-plugin-react-helmet`
+
+![01-final-lighthouse-audit.png](01-final-lighthouse-audit.png)
