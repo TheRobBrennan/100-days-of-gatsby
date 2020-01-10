@@ -36,6 +36,7 @@ module.exports = {
     },
     // The offline plugin should be listed after the manifest plugin so that the offline plugin can cache the created manifest.webmanifest.
     `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
