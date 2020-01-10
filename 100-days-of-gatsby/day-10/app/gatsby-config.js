@@ -31,6 +31,7 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
+    // The offline plugin should be listed after the manifest plugin so that the offline plugin can cache the created manifest.webmanifest.
     `gatsby-plugin-offline`,
     `gatsby-plugin-emotion`,
     {
