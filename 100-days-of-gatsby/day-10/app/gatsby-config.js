@@ -6,7 +6,10 @@
 
 module.exports = {
   siteMetadata: {
+    // Be sure that we have a title, description, and author when working with React Helmet
     title: `Pandas Eating Lots`,
+    description: `A simple description about pandas eating lots...`,
+    author: `gatsbyjs`,
   },
   plugins: [
     {
