@@ -13,4 +13,4 @@ I did find a starter that was mediocre and might work, but I still find myself d
 + [OneShopper](https://www.gatsbyjs.org/starters/rohitguptab/OneShopper/)
 ![https://www.gatsbyjs.org/static/63c35944f0ece63bbb377d59b445b205/27c5c/c01e14358831c5a5165e8b79a4368003.png](https://www.gatsbyjs.org/static/63c35944f0ece63bbb377d59b445b205/27c5c/c01e14358831c5a5165e8b79a4368003.png)
 
-It's good to know that this particular project might be suited to a wholly custom ground up design from me, so that's fine.
+It's good to know that this particular project might be suited to a wholly custom ground-up design from me, so that's fine.
