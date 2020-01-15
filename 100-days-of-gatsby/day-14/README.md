@@ -1,6 +1,6 @@
 # Day 14 - Tuesday, January 14th, 2020
 
-Today's focus is on viewing the [Gatsby Starters](https://www.gatsbyjs.org/docs/starters/) to see what template(s) might be useful for me to explore when creating a site for a catering company or restaurant.
+Today's focus is on viewing the [Gatsby Starters](https://www.gatsbyjs.org/docs/starters/) to see what template(s) might be useful for me to explore when creating a site for my band's web site.
 
 ## The results are in
 
