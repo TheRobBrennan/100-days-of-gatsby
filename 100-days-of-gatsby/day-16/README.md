@@ -59,3 +59,32 @@ Returns
 + srcSet (string)
 
 This is where fragments like `GatsbyImageSharpFixed` come in handy, as they’ll return all the above items in one line without having to type them all out.
+
+#### Images that stretch across a fluid container
+
+Create flexible sizes for an image that stretches to fill its container. E.g. for a container whose max width is 800px, the automatic sizes would be: 200px, 400px, 800px, 1200px and 1600px – enough to provide close to the optimal image size for every device size / screen resolution. If you want more control over which sizes are output you can use the `srcSetBreakpoints` parameter.
+
+Once you’ve queried for a fluid image to retrieve its data, you can pass that data into the Img component.
+
+##### Fluid image query parameters
+
+In a query, you can specify options for fluid images.
+
++ maxWidth (int, default: 800)
++ maxHeight(int)
++ quality (int, default: 50)
++ srcSetBreakpoints (array of int, default: [])
++ fit (string, default: [sharp.fit.cover][6])
++ background (string, default: rgba(0,0,0,1))
+
+Returns
+
++ base64 (string)
++ src (string)
++ width (int)
++ height (int)
++ aspectRatio (float)
++ src (string)
++ srcSet (string)
+
+This is where fragments like `GatsbyImageSharpFluid` come in handy, as they’ll return all the above items in one line without having to type them all out.
