@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  gatsby-day-16:
+    container_name: gatsby
+    build:
+      context: ./app
+      dockerfile: ./Dockerfile
+    command: sh -c "npm run develop"
+    ports:
+      - '8000:8000'
+    volumes:
+      - './app:/app'
+      # Use these folders from the Docker container and NOT the local development environment
+      - '/app/node_modules'
+    environment:
+      - NODE_ENV=development
+      - GATSBY_WEBPACK_PUBLICPATH=/

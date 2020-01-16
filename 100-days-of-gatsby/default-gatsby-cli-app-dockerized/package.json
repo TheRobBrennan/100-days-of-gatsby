@@ -1,0 +1,13 @@
+{
+  "name": "day-16",
+  "version": "0.0.0",
+  "description": "Today's focus is on exploring [gatsby-image](https://www.gatsbyjs.org/docs/gatsby-image/).",
+  "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
+  "license": "ISC",
+  "scripts": {
+    "start": "docker-compose up",
+    "build": "docker-compose up --remove-orphans --build --force-recreate",
+    "stop": "docker-compose down",
+    "docker:nuke": "docker system prune -a && docker volume prune"
+  }
+}
