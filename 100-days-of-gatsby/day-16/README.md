@@ -2,7 +2,9 @@
 
 Today's focus is on exploring [gatsby-image](https://www.gatsbyjs.org/docs/gatsby-image/).
 
-One important note? `gatsby-image` is not a drop-in replacement for <img />. It’s optimized for responsive fixed width/height images and images that stretch the full-width of a container. There are also other ways to [work with images](https://www.gatsbyjs.org/docs/images-and-files/) in Gatsby that don’t require GraphQL.
+One important note? `gatsby-image` is not a drop-in replacement for `<img />`. It’s optimized for responsive fixed width/height images and images that stretch the full-width of a container. There are also other ways to [work with images](https://www.gatsbyjs.org/docs/images-and-files/) in Gatsby that don’t require GraphQL.
+
+![screenshot-00-fluid-image-examples.png](screenshot-00-fluid-image-examples.png)
 
 ## Scratchpad
 
@@ -88,3 +90,33 @@ Returns
 + srcSet (string)
 
 This is where fragments like `GatsbyImageSharpFluid` come in handy, as they’ll return all the above items in one line without having to type them all out.
+
+#### Resized images
+
+In addition to *fixed* and *fluid* images, the `gatsby-image` API allows you to call a `resize` method with `gatsby-plugin-sharp` to return a single image as opposed to multiple sizes. There are no default fragments available for the resize method:
+
+Parameters
+
++ width (int, default: 400)
++ height (int)
++ quality (int, default: 50)
++ jpegProgressive (bool, default: true)
++ pngCompressionLevel (int, default: 9)
++ base64(bool, default: false)
+
+Returns an object with the following items:
+
++ src (string)
++ width (int)
++ height (int)
++ aspectRatio (float)
+
+### Shared query parameters
+
+In addition to `gatsby-plugin-sharp` settings in `gatsby-config.js`, there are additional query options that apply to both `fluid` and `fixed` images:
+
++ grayscale (bool, default: false)
++ duotone (bool|obj, default: false)
++ toFormat (string, default: ``)
++ cropFocus (string, default: [sharp.strategy.attention][6])
++ pngCompressionSpeed (int, default: 4)

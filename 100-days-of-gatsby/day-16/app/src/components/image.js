@@ -25,9 +25,27 @@ const Image = () => {
           }
         }
       }
-      fluidImageExample: file(relativePath: { eq: "artistic-moth.png"}) {
+      fluidImageExample: file(relativePath: { eq: "artistic-moth.png" }) {
         childImageSharp {
           fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      fluidImageExampleWithDuotone: file(
+        relativePath: { eq: "artistic-moth.png" }
+      ) {
+        childImageSharp {
+          fluid(duotone: { highlight: "#f00e2e", shadow: "#192550" }) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      fluidImageExampleWithGrayscale: file(
+        relativePath: { eq: "artistic-moth.png" }
+      ) {
+        childImageSharp {
+          fluid(grayscale: true) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -35,8 +53,23 @@ const Image = () => {
     }
   `)
 
-  // return <Img fixed={data.fixedImageExample.childImageSharp.fixed} alt="Fixed image example lovingly borrowed from the docs" />
-  return <Img fluid={data.fluidImageExample.childImageSharp.fluid} alt="Fluid image example lovingly borrowed from the docs" />
+  return (
+    <>
+      {/* <Img fixed={data.fixedImageExample.childImageSharp.fixed} alt="Fixed image example lovingly borrowed from the docs" /> */}
+      <Img
+        fluid={data.fluidImageExample.childImageSharp.fluid}
+        alt="Fluid image example lovingly borrowed from the docs"
+      />
+      <Img
+        fluid={data.fluidImageExampleWithDuotone.childImageSharp.fluid}
+        alt="Fluid image example lovingly borrowed from the docs"
+      />
+      <Img
+        fluid={data.fluidImageExampleWithGrayscale.childImageSharp.fluid}
+        alt="Fluid image example lovingly borrowed from the docs"
+      />
+    </>
+  )
 }
 
 export default Image
