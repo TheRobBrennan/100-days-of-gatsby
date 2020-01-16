@@ -20,7 +20,7 @@ const Image = () => {
         childImageSharp {
           # Specify a fixed image and fragment.
           # The default width is 400 pixels
-          fixed {
+          fixed(quality: 100, width: 900) {
             ...GatsbyImageSharpFixed
           }
         }
