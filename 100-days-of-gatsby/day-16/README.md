@@ -8,7 +8,7 @@ To create a new Gatsby app, I will use `npx` to create a new [Gatsby](https://ww
 
 ```sh
 # Navigate to the appropriate example directory
-$ cd examples/day-16
+$ cd 100-days-of-gatsby/day-16
 
 # Generate a new app using the latest version of the Gatsby CLI
 $ npx gatsby new app
