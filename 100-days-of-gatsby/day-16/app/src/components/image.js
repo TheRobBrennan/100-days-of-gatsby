@@ -25,10 +25,18 @@ const Image = () => {
           }
         }
       }
+      fluidImageExample: file(relativePath: { eq: "artistic-moth.png"}) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
-  return <Img fixed={data.fixedImageExample.childImageSharp.fixed} alt="Fixed image example lovingly borrowed from the docs" />
+  // return <Img fixed={data.fixedImageExample.childImageSharp.fixed} alt="Fixed image example lovingly borrowed from the docs" />
+  return <Img fluid={data.fluidImageExample.childImageSharp.fluid} alt="Fluid image example lovingly borrowed from the docs" />
 }
 
 export default Image
