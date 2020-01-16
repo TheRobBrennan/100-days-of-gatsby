@@ -21,4 +21,6 @@ $ cd app
 # Install gatsby-image and related plugins
 $ npm install --save gatsby-image gatsby-plugin-sharp gatsby-transformer-sharp
 
+# Modify gatsby-config.js so that plugins contains a definition for gatsby-source-filesystem with options specifying images
+# Modify gatsby-config.js so that gatsby-plugin-sharp and gatsby-transformer-sharp are defined in plugins
 ```
