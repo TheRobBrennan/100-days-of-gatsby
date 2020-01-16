@@ -111,7 +111,7 @@ Returns an object with the following items:
 + height (int)
 + aspectRatio (float)
 
-### Shared query parameters
+#### Shared query parameters
 
 In addition to `gatsby-plugin-sharp` settings in `gatsby-config.js`, there are additional query options that apply to both `fluid` and `fixed` images:
 
@@ -120,3 +120,45 @@ In addition to `gatsby-plugin-sharp` settings in `gatsby-config.js`, there are a
 + toFormat (string, default: ``)
 + cropFocus (string, default: [sharp.strategy.attention][6])
 + pngCompressionSpeed (int, default: 4)
+
+### Image query fragments
+
+GraphQL includes a concept called “query fragments”, which are a part of a query that can be reused. To ease building with `gatsby-image`, Gatsby image processing plugins which support `gatsby-image` ship with fragments which you can easily include in your queries.
+
+Note: using fragments in your queries depends on which data source(s) you have configured. Read more in the [gatsby-image README](https://www.gatsbyjs.org/packages/gatsby-image#fragments).
+
+#### Common fragments with gatsby-transformer-sharp
+
+##### Fixed images
+
++ `GatsbyImageSharpFixed`
++ `GatsbyImageSharpFixed_noBase64`
++ `GatsbyImageSharpFixed_tracedSVG`
++ `GatsbyImageSharpFixed_withWebp`
++ `GatsbyImageSharpFixed_withWebp_noBase64`
++ `GatsbyImageSharpFixed_withWebp_tracedSVG`
+
+##### Fluid images
+
++ `GatsbyImageSharpFluid`
++ `GatsbyImageSharpFluid_noBase64`
++ `GatsbyImageSharpFluid_tracedSVG`
++ `GatsbyImageSharpFluid_withWebp`
++ `GatsbyImageSharpFluid_withWebp_noBase64`
++ `GatsbyImageSharpFluid_withWebp_tracedSVG`
+
+##### About noBase64
+
+If you don’t want to use the [blur-up](https://using-gatsby-image.gatsbyjs.org/blur-up/) effect, choose the fragment with noBase64 at the end.
+
+##### About tracedSVG
+
+If you want to use the [traced placeholder SVGs](https://using-gatsby-image.gatsbyjs.org/traced-svg/), choose the fragment with tracedSVG at the end.
+
+##### About withWebP
+
+If you want to automatically use [WebP](https://developers.google.com/speed/webp/) images when the browser supports the file format, use the `withWebp` fragments. If the browser doesn’t support WebP, `gatsby-image` will fall back to the default image format.
+
+#### Additional plugin fragments
+
+Additionally, plugins supporting `gatsby-image` currently include `gatsby-source-contentful`, `gatsby-source-datocms` and `gatsby-source-sanity`. See the `gatsby-image` README for more details.
