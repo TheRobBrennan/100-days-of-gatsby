@@ -24,3 +24,19 @@ $ npm install --save gatsby-image gatsby-plugin-sharp gatsby-transformer-sharp
 # Modify gatsby-config.js so that plugins contains a definition for gatsby-source-filesystem with options specifying images
 # Modify gatsby-config.js so that gatsby-plugin-sharp and gatsby-transformer-sharp are defined in plugins
 ```
+
+### Gatsby image starts with a query
+
+To feed file data in to Gatsby Image, set up a GraphQL query and either pass it into a component as props or write it directly in the component. One technique is to leverage the `useStaticQuery` hook.
+
+Common GraphQL queries for sourcing images include `file` from `gatsby-source-filesystem`, and both `imageSharp` and `allImageSharp` from `gatsby-plugin-sharp`, but ultimately the options available to you will depend on your content sources.
+
+### Types of images with gatsby-image
+
+Gatsby image objects are created through GraphQL methods. There are two types of image optimizations available, *fixed* and *fluid*, which create multiple image sizes (1x, 1.5x, etc.). There is also the resize method, which returns a single image.
+
+#### Images with a fixed width and height
+
+Automatically create images for different resolutions at a set width or height — Gatsby creates responsive images for `1x`, `1.5x`, and `2x` pixel densities using the `<picture>` element.
+
+Once you’ve queried for a fixed image to retrieve its data, you can pass that data into the `Img` component.
