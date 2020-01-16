@@ -40,3 +40,22 @@ Gatsby image objects are created through GraphQL methods. There are two types of
 Automatically create images for different resolutions at a set width or height — Gatsby creates responsive images for `1x`, `1.5x`, and `2x` pixel densities using the `<picture>` element.
 
 Once you’ve queried for a fixed image to retrieve its data, you can pass that data into the `Img` component.
+
+##### Fixed image query parameters
+
+In a query, you can specify options for fixed images:
+
++ width (int, default: 400)
++ height (int)
++ quality (int, default: 50)
+
+Returns
+
++ base64 (string)
++ aspectRatio (float)
++ width (float)
++ height (float)
++ src (string)
++ srcSet (string)
+
+This is where fragments like `GatsbyImageSharpFixed` come in handy, as they’ll return all the above items in one line without having to type them all out.
