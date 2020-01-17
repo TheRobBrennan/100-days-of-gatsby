@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "100-days-of-gatsby",
+  "builds": [
+    {
+      "src": "100-days-of-gatsby/day-17/app/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)", "dest": "100-days-of-gatsby/day-17/app/$1"
+    }
+  ]
+}
