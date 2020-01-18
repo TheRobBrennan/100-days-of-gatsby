@@ -200,6 +200,48 @@ Normally we recommend importing stylesheets, images, and font assets from JavaSc
 
 ### Using gatsby-image
 
+`gatsby-image` is a React component designed to work seamlessly with Gatsby’s GraphQL queries (gatsby-image plugin README). It combines Gatsby’s native image processing capabilities with advanced image loading techniques to easily and completely optimize image loading for your sites. `gatsby-image` uses `gatsby-plugin-sharp` to power its image transformations.
+
+Warning: `gatsby-image` is not a drop-in replacement for `<img />`. It’s optimized for fixed width/height images and images that stretch the full width of a container. Some ways you can use `<img />` won’t work with `gatsby-image`.
+
+`gatsby-image` includes the tricks you’d expect from a modern image component. It:
+
++ uses the new [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to cheaply lazy load images
++ holds an image’s position so your page doesn’t jump around as images load
++ makes it easy to add a placeholder—either a gray background or a blurry version of the image.
+
+For more complete API information, check out the [Gatsby Image API](https://www.gatsbyjs.org/docs/gatsby-image/) docs.
+
+#### Problem
+
+Large, unoptimized images dramatically slow down your site.
+
+But creating optimized images for websites has long been a thorny problem. Ideally, you would:
+
++ Resize large images to the size needed by your design
++ Generate multiple smaller images so smartphones and tablets don’t download desktop-sized images
++ Strip all unnecessary metadata and optimize JPEG and PNG compression
++ Efficiently lazy load images to speed initial page load and save bandwidth
++ Use the “blur-up” technique or a “traced placeholder” SVG to show a preview of the image while it loads
++ Hold the image position so your page doesn’t jump while the images load
++ Doing this consistently across a site feels like Sisyphean labor. You manually optimize your images and then… several images are swapped in at the last minute or a design-tweak shaves 100px of width off your images.
+
+Most solutions involve a lot of manual labor and bookkeeping to ensure every image is optimized.
+
+This isn’t ideal. Optimized images should be easy and the default.
+
+#### Solution
+
+With Gatsby, you can make the experience of working with images way, way better.
+
+`gatsby-image` is designed to work seamlessly with Gatsby’s native image processing capabilities powered by GraphQL and Sharp. To produce perfect images with minimal effort, you can:
+
++ Install `gatsby-image` and other, necessary dependencies like `gatsby-plugin-sharp` and `gatsby-transformer-sharp`
++ Add the newly installed plugins and transformer plugins to your `gatsby-config.js`
++ Configure `gatsby-source-filesystem` to load images from a folder. In order to use GraphQL to query the image files, the files need to be in a location that is known to Gatsby. This requires an update to `gatsby-config.js` to configure the plugin. Feel free to replace the path option to reference wherever your images are located in your project.
++ Write a GraphQL query using one of the included GraphQL “fragments” which specify the fields needed by `gatsby-image` to create a responsive, optimized image. This example queries for an image at a path relative to the location specified in the `gatsby-source-filesystem` options using the `GatsbyImageSharpFluid` fragment. This GraphQL query creates multiple sizes of the image and when the page is rendered the image that is appropriate for the current screen resolution (e.g. desktop, mobile, and everything in between) is used. The gatsby-image component automatically enables a blur-up effect as well as lazy loading images that are not currently on screen.
++ Import `Img` to display the fragment in JSX. There are additional features available with the `Img` tag as well, such as the `alt` attribute for accessibility.
+
 ### Working with Images in Gatsby
 
 ### Preoptimizing Your Images
