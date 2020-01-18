@@ -18,3 +18,29 @@ $ cd 100-days-of-gatsby/day-##
 # Navigate to the app directory
 $ cd app
 ```
+
+## Images, Files & Video in Gatsby
+
+Gatsby provides multiple solutions for adding images, video, and files to your projects. And a pro tip: you don’t necessarily have to use GraphQL! From [imports](https://www.gatsbyjs.org/docs/importing-assets-into-files/) and use of the [static folder](https://www.gatsbyjs.org/docs/static-folder/) to dynamic queries with [Gatsby Image](https://www.gatsbyjs.org/docs/using-gatsby-image/) to prevent image bloat, you’ve got options.
+
+This section will walk you through several common patterns for handling media with Gatsby, where you can learn about the pros and cons of each method.
+
+### Importing Assets Directly into Files
+
+### Using the Static Folder
+
+### Using gatsby-image
+
+### Working with Images in Gatsby
+
+### Preoptimizing Your Images
+
+### Working with Video
+
+### Importing Media Content
+
+### Working with GIFs
+
+### Working with Images in Markdown
+
+### Preprocessing External Images
