@@ -1,6 +1,10 @@
 # Day 19 - Sunday, January 19th, 2020
 
-Today's focus is on a blog post I found - [Reading Data From A JSON File With Gatsby + GraphQL](https://itnext.io/reading-data-from-a-json-file-with-gatsby-graphql-572b18ab98a)
+Today's focus is on a blog post I found - [Reading Data From A JSON File With Gatsby + GraphQL](https://itnext.io/reading-data-from-a-json-file-with-gatsby-graphql-572b18ab98a).
+
+![screenshot-00.png](screenshot-00.png)
+
+![screenshot-01.png](screenshot-01.png)
 
 ## Scratchpad
 
