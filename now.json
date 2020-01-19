@@ -10,7 +10,7 @@
   ],
   "routes": [
     {
-      "src": "/(.*)", "dest": "100-days-of-gatsby/day-18/app/$1"
+      "src": "/(.*)", "dest": "100-days-of-gatsby/day-19/app/$1"
     }
   ]
 }
