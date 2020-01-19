@@ -3,7 +3,7 @@
   "name": "100-days-of-gatsby",
   "builds": [
     {
-      "src": "100-days-of-gatsby/day-18/app/package.json",
+      "src": "100-days-of-gatsby/day-19/app/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "public" }
     }
