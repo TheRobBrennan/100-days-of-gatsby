@@ -92,7 +92,7 @@ $ npm i -D identity-obj-proxy
 At this point, we have Jest configured as advised by the example Gatsby repo. Let's add a `test` script to `package.json` and give it a whirl:
 
 ```sh
-ob@rb app % npt  
+ob@rb app % npm test
 
 > gatsby-starter-default@0.1.0 test /Users/rob/repos/100-days-of-gatsby/100-days-of-gatsby/day-21/app
 > jest
