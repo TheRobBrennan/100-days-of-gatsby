@@ -39,7 +39,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --collect-coverage && open coverage/index.html"
   },
   "repository": {
     "type": "git",

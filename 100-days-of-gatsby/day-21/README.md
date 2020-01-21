@@ -2,7 +2,13 @@
 
 Today's focus is on incorporating [Jest](https://jestjs.io) into a Gatsby project for automated unit and integration testing.
 
-Let's take a look at the official example from Gatsby at [https://github.com/gatsbyjs/gatsby/tree/master/examples/using-jest](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-jest)
+Let's take a look at the official example from Gatsby at [https://github.com/gatsbyjs/gatsby/tree/master/examples/using-jest](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-jest).
+
+As an added bonus, I've added a `test:coverage` script to generate a code coverage report (100% coverage as of this writing) as well as automatically open a web browser to the generated report to review our test coverage 🤓
+
+![screenshot-00.png](screenshot-00.png)
+
+![screenshot-01.png](screenshot-01.png)
 
 ## Scratchpad
 
