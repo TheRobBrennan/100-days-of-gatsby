@@ -88,3 +88,24 @@ $ npm i -D @testing-library/jest-dom @testing-library/react
 # Install the identity object proxy
 $ npm i -D identity-obj-proxy
 ```
+
+At this point, we have Jest configured as advised by the example Gatsby repo. Let's add a `test` script to `package.json` and give it a whirl:
+
+```sh
+ob@rb app % npt  
+
+> gatsby-starter-default@0.1.0 test /Users/rob/repos/100-days-of-gatsby/100-days-of-gatsby/day-21/app
+> jest
+
+No tests found, exiting with code 1
+Run with `--passWithNoTests` to exit with code 0
+In /Users/rob/repos/100-days-of-gatsby/100-days-of-gatsby/day-21/app
+  106 files checked.
+  testMatch: **/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x) - 7 matches
+  testPathIgnorePatterns: node_modules, .cache - 26 matches
+  testRegex:  - 0 matches
+Pattern:  - 0 matches
+npm ERR! Test failed.  See above for more details.
+```
+
+Excellent. No tests have been found. Let's add some.
