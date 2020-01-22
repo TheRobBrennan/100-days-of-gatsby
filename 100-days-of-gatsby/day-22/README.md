@@ -38,6 +38,6 @@ $ npm i --force -D eslint eslint-config-prettier eslint-plugin-prettier @typescr
 Next, let's install the Gatsby TypeScript plugin:
 
 ```sh
-# Install the Gatsby plugin
+# Install the Gatsby typescript plugin
 $ npm i gatsby-plugin-typescript
 ```
