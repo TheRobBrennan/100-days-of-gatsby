@@ -2,6 +2,8 @@
 
 Today's focus is on [exploring TypeScript with Gatsby](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-typescript)
 
+![screenshot-00.png](screenshot-00.png)
+
 ## Scratchpad
 
 To create a new Gatsby app, I will use `npx` to create a new [Gatsby](https://www.gatsbyjs.com) app using the latest version of the [Gatsby CLI](https://www.gatsbyjs.com):
