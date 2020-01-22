@@ -3,14 +3,14 @@
   "name": "100-days-of-gatsby",
   "builds": [
     {
-      "src": "100-days-of-gatsby/day-22/app/package.json",
+      "src": "100-days-of-gatsby/day-22a/app/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "public" }
     }
   ],
   "routes": [
     {
-      "src": "/(.*)", "dest": "100-days-of-gatsby/day-22/app/$1"
+      "src": "/(.*)", "dest": "100-days-of-gatsby/day-22a/app/$1"
     }
   ]
 }
