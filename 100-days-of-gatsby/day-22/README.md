@@ -41,3 +41,7 @@ Next, let's install the Gatsby TypeScript plugin:
 # Install the Gatsby typescript plugin
 $ npm i gatsby-plugin-typescript
 ```
+
+Add a file for TypeScript rules and configuration - `tsconfig.json`
+Update `gatsby-config.js` so that `gatsby-plugin-typescript` is added to the `plugins` array
+Add a file for ESLint rules and configuration - `.eslintrc.js`
