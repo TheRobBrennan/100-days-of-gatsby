@@ -50,7 +50,15 @@ $ npm i -D @testing-library/jest-dom @testing-library/react
 $ npm i -D identity-obj-proxy
 ```
 
-// Configure Jest
+In order to configure Jest for the project, we need to:
+
++ Add a `__mocks__` folder that we can use for our unit tests
++ Add the following configuration files in the root of the Gatsby project
+  + jest-preprocess.js
+  + jest.config.js
+  + jest.setup.js
+  + loadershim.js
+
 // Add TypeScript specific enhancements
 
 At this point, we have Jest configured as advised by the example Gatsby repo. Let's add our `test` and `test:coverage` scripts to `package.json` and give it a whirl:
