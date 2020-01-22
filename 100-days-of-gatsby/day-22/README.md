@@ -1,6 +1,6 @@
 # Day 22 - Wednesday, January 22nd, 2020
 
-Today's focus is on exploring TypeScript with Gatsby.
+Today's focus is on [exploring TypeScript with Gatsby](https://github.com/gatsbyjs/gatsby/tree/master/examples/using-typescript)
 
 ## Scratchpad
 
@@ -17,4 +17,26 @@ $ cd 100-days-of-gatsby/day-##
 
 # Navigate to the app directory
 $ cd app
+```
+
+### Setup TypeScript for Gatsby
+
+First, let's install TypeScript and our required dev dependencies:
+
+```sh
+# Install TypeScript
+$ npm i -D typescript
+
+# Install types and definitions for node and React
+$ npm i -D @types/node @types/react @types/react-dom
+
+# Install ESLint, plugins, etc
+$ npm i -D eslint eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser
+```
+
+Next, let's install the Gatsby TypeScript plugin:
+
+```sh
+# Install the Gatsby plugin
+$ npm i gatsby-plugin-typescript
 ```
