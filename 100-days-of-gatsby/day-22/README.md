@@ -30,8 +30,9 @@ $ npm i -D typescript
 # Install types and definitions for node and React
 $ npm i -D @types/node @types/react @types/react-dom
 
-# Install ESLint, plugins, etc
-$ npm i -D eslint eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser
+# Install ESLint, plugins, types, and definitions
+$ npm i --force -D eslint eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser
+  # TROUBLESHOOTING: If there is an issue of a file existing, remove node_modules and try reinstalling
 ```
 
 Next, let's install the Gatsby TypeScript plugin:
