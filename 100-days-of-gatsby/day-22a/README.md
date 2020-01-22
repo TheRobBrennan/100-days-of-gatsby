@@ -59,9 +59,24 @@ In order to configure Jest for the project, we need to:
   + jest.setup.js
   + loadershim.js
 
-// Add TypeScript specific enhancements
+To add enhancements specific for TypeScript, we will follow the [guide](https://www.gatsbyjs.org/docs/unit-testing/#using-typescript) at [https://www.gatsbyjs.org/docs/unit-testing/#using-typescript](https://www.gatsbyjs.org/docs/unit-testing/#using-typescript)
 
-At this point, we have Jest configured as advised by the example Gatsby repo. Let's add our `test` and `test:coverage` scripts to `package.json` and give it a whirl:
+First, we will update `jest.config.js` to run `jest-preprocess` on files in your project’s root directory:
+
+```sh
+"^.+\\.[jt]sx?$": "<rootDir>/jest-preprocess.js",
+```
+
+Second, we will update `jest-preprocess.js` so that `babelOptions` will specify the two presets we need.
+
+```sh
+const babelOptions = {
+  presets: [`babel-preset-gatsby`, `@babel/preset-typescript`],
+}
+...
+```
+
+At this point, we have Jest configured as advised by the example Gatsby repo. Let's add our `test`, `test:coverage`, and `test:watch` scripts to `package.json` and give it a whirl:
 
 ```sh
 rob@rb app % npm test
