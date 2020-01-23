@@ -82,6 +82,52 @@ At this point, we have Jest configured as advised by the example Gatsby repo. Le
 
 ```sh
 rob@rb app % npm test
+
+> gatsby-starter-default@0.1.0 test /Users/rob/repos/100-days-of-gatsby/100-days-of-gatsby/day-22a/app
+> jest
+
+ PASS  src/pages/index.test.tsx
+  Index
+    ✓ should have tests written (3ms)
+    ✓ contains a greeting (53ms)
+
+  console.log node_modules/@testing-library/react/dist/pure.js:94
+    <body>
+      <div>
+        <div
+          style="margin: 1.5px auto 1.5px auto; max-width: 650px; padding-left: 0.75px; padding-right: 0.75px;"
+        >
+          <h1>
+            Hello
+             TypeScript world!
+          </h1>
+          <p>
+            This site is named 
+            <strong>
+              My site
+            </strong>
+          </p>
+          <p>
+            Interested in details of this site?
+             
+            <br />
+             
+            <a
+              href="https://myfakesite.com"
+              target="__blank"
+            >
+              View the source
+            </a>
+          </p>
+        </div>
+      </div>
+    </body>
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        4.098s
+Ran all test suites.
 ```
 
 Success. Jest has been configured for our project and we have passing tests 💯
