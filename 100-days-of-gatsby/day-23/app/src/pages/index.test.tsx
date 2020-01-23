@@ -14,7 +14,7 @@ describe(`Index`, () => {
     const mockPageQuery = {
       site: {
         siteMetadata: {
-          siteName: 'My site',
+          siteName: 'Using Jest to mock GraphQL',
           exampleUrl: 'https://myfakesite.com',
         }
       }
