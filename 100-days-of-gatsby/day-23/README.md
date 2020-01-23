@@ -4,4 +4,4 @@ After experiencing some surprising behavior with writing tests for the simple ap
 
 Ultimately I'd love to incorporate this into a blog post at some point, but currently there are way too many other pressing priorities to give that draft an estimated timeline.
 
-## Scratchpad
+## Thinking out loud
