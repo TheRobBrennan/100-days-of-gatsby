@@ -9,7 +9,7 @@ interface IndexPageProps {
   data: {
     site: {
       siteMetadata: {
-        siteName: string
+        siteName: string,
       }
     }
   }
@@ -35,7 +35,7 @@ export default class IndexPage extends React.Component<IndexPageProps> {
         <p>
           This site is named <strong>{siteName}</strong>
         </p>
-        <Source description="Interested in details of this site?" />
+        <Source description="Interested in details of this site?" {...this.props} />
       </Layout>
     )
   }

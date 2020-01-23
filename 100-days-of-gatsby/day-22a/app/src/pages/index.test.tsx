@@ -1,51 +1,29 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { StaticQuery } from 'gatsby' // mocked
 
 import Index from './index'
-
-// beforeEach(() => {
-//   StaticQuery.mockImplementationOnce(({ render }) =>
-//     render({
-//       site: {
-//         siteMetadata: {
-//           title: `GatsbyJS`,
-//         },
-//       },
-//     })
-//   ).mockImplementationOnce(({ render }) =>
-//     render({
-//       placeholderImage: {
-//         childImageSharp: {
-//           fluid: {
-//             aspectRatio: 1,
-//             sizes: `100 200 300`,
-//             src: `pretend-i-am-a-base64-encoded-image`,
-//             srcSet: `asdfasdf`,
-//           },
-//         },
-//       },
-//     })
-//   )
-// })
 
 describe(`Index`, () => {
   it(`should have tests written`, () => {
     expect(true).toEqual(true)
   })
-  // it(`contains a gatsby image`, () => {
-  //   const { getByTestId } = render(<Index />)
 
-  //   const node = getByTestId(`gatsby-logo`)
+  it(`contains a greeting`, () => {
+    // Create mock data here. IndexPage will have the result of pageQuery available as this.props.data;
+    // we can simulate that GraphQL response here by passing in an explicit data prop
+    const mockPageQuery = {
+      site: {
+        siteMetadata: {
+          siteName: 'My site',
+          exampleUrl: 'https://myfakesite.com',
+        }
+      }
+    }
+    const { getByText, debug } = render(<Index data={mockPageQuery} />)
+    debug() // Display our rendered HTML
 
-  //   expect(node.querySelectorAll(`picture`)).toHaveLength(1)
-  // })
+    const greeting = getByText(/Hello/)
+    expect(greeting).toBeInTheDocument()
 
-  // it(`contains a greeting`, () => {
-  //   const { getByText } = render(<Index />)
-
-  //   const greeting = getByText(`Hi people`)
-
-  //   expect(greeting).toBeInTheDocument()
-  // })
+  })
 })
