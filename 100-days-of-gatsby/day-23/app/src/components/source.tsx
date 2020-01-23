@@ -47,6 +47,10 @@ const Source = (props: SourceProps): ReactElement => {
     }
   `)
 
+  // Add logging to see what data is getting passed in
+  console.log(`Source data: ${JSON.stringify(data, null, 2)}`)
+  console.log(`Source props.data: ${JSON.stringify(props.data, null, 2)}`)
+
   // Note that we are explicitly passing in a data prop to our PureSourceComponent
   //  WHY? We want our component to use data generated from the static query in a live Gatsby app;
   //  however if that is undefined it means we are in a testing environment and need to supply our data.

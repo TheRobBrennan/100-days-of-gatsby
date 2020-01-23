@@ -169,3 +169,209 @@ describe(`IndexPage`, () => {
   })
 })
 ```
+
+Congratulations. You have just learned how to mock GraphQL data for your Gatsby pages...er, your Gatsby pages that contain components that do not rely upon GraphQL data being supplied from a static query.
+
+Let's look at the next example to see why.
+
+### Example 2: Introduce the Source component
+
+Let's take a look at an example component that will use a static query for Gatsby to inject data.
+
+When reviewing the code for the `Source` component, please note the following:
+
++ We are using a static query to inject GraphQL data into our component
++ We have created a `PureSourceComponent` so that a future `source.test.tsx` file can test the component with data independently - without relying upon external dependencies such as our GraphQL data
++ We have made minor changes to logging statements to clearly identify data supplied to the `IndexPage` component and data supplied to the `Source` component
+
+```jsx
+import React, { ReactElement } from "react"
+import { graphql, useStaticQuery } from "gatsby"
+
+const defaultProps = {
+  linkText: `View the source`,
+}
+
+type SourceProps = { description: string, data?: any } & typeof defaultProps
+
+type UrlProps = {
+  site: {
+    siteMetadata: {
+      exampleUrl: string
+    }
+  }
+}
+
+type PureComponentProps = {
+  description: string,
+  linkText: string,
+  data?: any,
+}
+
+// TIP: Create a PureComponent for testing purposes
+// TODO: Write a separate source.test.tsx file to test the pure component
+export const PureSourceComponent = ({ data, description, linkText }: PureComponentProps) => {
+  const href = (data && data.site.siteMetadata.exampleUrl)
+  const target = (href && '__blank')
+
+  return (
+    <>
+      <p>
+        {description} <br /> <a href={href} target={target}>{linkText}</a>
+      </p>
+    </>
+  )
+}
+
+const Source = (props: SourceProps): ReactElement => {
+  const data = useStaticQuery<UrlProps>(graphql`
+    query {
+      site {
+        siteMetadata {
+          exampleUrl
+        }
+      }
+    }
+  `)
+
+  // Add logging to see what data is getting passed in
+  console.log(`Source data: ${JSON.stringify(data, null, 2)}`)
+  console.log(`Source props.data: ${JSON.stringify(props.data, null, 2)}`)
+
+  return (
+    <PureSourceComponent {...props} />
+  )
+}
+
+export default Source
+
+Source.defaultProps = defaultProps
+```
+
+If we look at our browser console, we can see that we have received the `exampleUrl` from our Gatsby site metadata. Our test suite, however, shows that we do not have any data to work with:
+
+![screenshots/screenshot-06.png](screenshots/screenshot-06.png)
+
+What?
+
+This is correct. Remember in our first example that we need to generate a mock GraphQL response for our page query. So...What do we need to do to make this component work?
+
+Let's use the spread syntax and pass our props from the `IndexPage` component to our `Source` component:
+
+```jsx
+// src/pages/index.tsx
+// ...
+export default class IndexPage extends React.Component<IndexPageProps> {
+  readonly hello = `Hello`
+  public render() {
+    // Add logging to see what data is getting passed in
+    console.log(`IndexPage this.props.data: ${JSON.stringify(this.props.data, null, 2)}`)
+
+    const { siteName } = this.props.data.site.siteMetadata
+    return (
+      <Layout>
+        <h1>{siteName}</h1>
+        <p>
+          {this.hello}.
+        </p>
+        <Source description="Interested in details of this site?" {...this.props} />
+      </Layout>
+    )
+  }
+}
+```
+
+Notice how our test (on the left) does not have data from Gatsby's GraphQL static query, but it does contain the mock GraphQL data we defined in `mockPageQuery`. For our Gatsby page on the right, we can see that the `Source` component **does** receive data from GraphQL - as well as data from GraphQL that was injected when the `IndexPage` was built:
+
+![screenshots/screenshot-07.png](screenshots/screenshot-07.png)
+
+Let's look at one more thing. Did you notice that our test output shows that we have a data shape for `Source props.data` that does not match the `Source props.data` output we see in the browser console log?
+
+This might be a moment where you find yourself scratching your head.
+
+Let's think about what's going on here. We defined mock GraphQL data that we supplied to the `IndexPage` in our test. The `IndexPage` component is passing its props through to the `Source` component. The `Source` component actually passes these props to the `PureSourceComponent` so that whatever data is presented will be displayed.
+
+One more thing. Did you also notice that we have lost our hyperlink for `View the source` in the HTML rendered for the Gatsby page? Oh dear.
+
+Let's modify our test so that we can see what HTML is being rendered by the component:
+
+```jsx
+// src/pages/index.test.jsx
+import React from 'react'
+import { render } from '@testing-library/react'
+
+import Index from './index'
+
+describe(`IndexPage`, () => {
+  it(`contains a greeting`, () => {
+    // Create mock data here. IndexPage will have the result of pageQuery available as this.props.data;
+    // we can simulate that GraphQL response here by passing in an explicit data prop
+    const mockPageQuery = {
+      site: {
+        siteMetadata: {
+          siteName: 'Using Jest to mock GraphQL',
+          exampleUrl: 'https://myfakesite.com',
+        }
+      }
+    }
+    const { getByText, debug } = render(<Index data={mockPageQuery} />)
+    debug() // Display our rendered HTML
+
+    const greeting = getByText(/Hello/)
+    expect(greeting).toBeInTheDocument()
+
+  })
+})
+```
+
+We can see that our test is showing a component that renders the hyperlink for `View the source` with our `https://myfakesite.com` mock data, however the actual Gatsby rendered page does not have a hyperlink for `View the source`:
+
+![screenshots/screenshot-08.png](screenshots/screenshot-08.png)
+
+Let's fix this.
+
+In our `Source` component, let's pass in all of the props first and then use the response from our Gatsby GraphQL static query - `data` - or use `props.data` passed in from our parent component:
+
+
+```jsx
+// src/components/source.tsx
+// ...
+const Source = (props: SourceProps): ReactElement => {
+  const data = useStaticQuery<UrlProps>(graphql`
+    query {
+      site {
+        siteMetadata {
+          exampleUrl
+        }
+      }
+    }
+  `)
+
+  // Add logging to see what data is getting passed in
+  console.log(`Source data: ${JSON.stringify(data, null, 2)}`)
+  console.log(`Source props.data: ${JSON.stringify(props.data, null, 2)}`)
+
+  // Note that we are explicitly passing in a data prop to our PureSourceComponent
+  //  WHY? We want our component to use data generated from the static query in a live Gatsby app;
+  //  however if that is undefined it means we are in a testing environment and need to supply our data.
+  //
+  // In the case of this Source component - which we are incorporating into our index page - the index page
+  // test will fail because the mock query result that we sent to it will not automatically get passed down
+  // to children components.
+  return (
+    <PureSourceComponent {...props} data={data || props.data} />
+  )
+}
+
+export default Source
+
+Source.defaultProps = defaultProps
+```
+
+Tada! 🎩 Our `Source` component now receives data from either the Gatsby GraphQL static query or the data from its parent component:
+
+![screenshots/screenshot-09a.png](screenshots/screenshot-09a.png)
+
+![screenshots/screenshot-09b.png](screenshots/screenshot-09b.png)
+
+...and now we can rest easy. Our tests pass for the `IndexPage`, and our live site actually does display an external link to a GitHub repo as expected.

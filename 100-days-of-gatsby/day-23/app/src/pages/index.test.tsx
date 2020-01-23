@@ -15,8 +15,8 @@ describe(`IndexPage`, () => {
         }
       }
     }
-    const { getByText } = render(<Index data={mockPageQuery} />)
-    // debug() // Display our rendered HTML
+    const { getByText, debug } = render(<Index data={mockPageQuery} />)
+    debug() // Display our rendered HTML
 
     const greeting = getByText(/Hello/)
     expect(greeting).toBeInTheDocument()
