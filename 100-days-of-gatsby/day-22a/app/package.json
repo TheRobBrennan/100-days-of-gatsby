@@ -49,7 +49,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
-    "test:coverage": "jest --collect-coverage && open coverage/index.html",
+    "test:coverage": "jest --collect-coverage && open coverage/lcov-report/index.html",
     "test:watch": "npm test -- --watch",
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ignore-path .gitignore --ext .ts,.tsx,.js"
