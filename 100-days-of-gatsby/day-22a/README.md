@@ -2,6 +2,8 @@
 
 Now that we have added TypeScript to our Gatsby app in Day 22, let's see how easy it is to add testing capabilities with [Jest](https://jestjs.io).
 
+I did find a great resource - [Testing Components with GraphQL](https://github.com/gatsbyjs/gatsby/blob/master/docs/docs/testing-components-with-graphql.md) - which talks about ways to im
+
 ## Scratchpad
 
 To create a new Gatsby app, I will use `npx` to create a new [Gatsby](https://www.gatsbyjs.com) app using the latest version of the [Gatsby CLI](https://www.gatsbyjs.com):
