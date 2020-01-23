@@ -1,9 +1,11 @@
+const gatsbyAppTitle = `Gatsby: TypeScript and Jest example`
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: gatsbyAppTitle,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    siteName: `Gatsby Default Starter - Day 22a`,
+    siteName: gatsbyAppTitle,
     exampleUrl: `https://github.com/gatsbyjs/gatsby/tree/master/examples/using-typescript`,
   },
   plugins: [
