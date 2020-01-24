@@ -2,7 +2,7 @@
 
 With today being a super chaotic day for me (preparing for my band's first show of the year tonight), I opted to have a relaxed focus on exploring responsive layouts in Gatsby.
 
-Clearly, these ideas aren't Gatsby-specific - they are guidelines and thoughts that could be applied to any React app or front-end project.
+These ideas aren't Gatsby-specific - they are guidelines and thoughts that could be applied to any React app or front-end project.
 
 ## Resources
 
