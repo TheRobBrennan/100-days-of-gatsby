@@ -1,0 +1,13 @@
+{
+  "name": "day-25",
+  "version": "0.0.0",
+  "description": "Today's focus is on reviewing the Gatsby store example - with the repo available at [https://github.com/gatsbyjs/store.gatsbyjs.org](https://github.com/gatsbyjs/store.gatsbyjs.org) and a demo of the site available at [https://store.gatsbyjs.org](https://store.gatsbyjs.org)",
+  "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
+  "license": "ISC",
+  "scripts": {
+    "start": "docker-compose up",
+    "build": "docker-compose up --remove-orphans --build --force-recreate",
+    "stop": "docker-compose down",
+    "docker:nuke": "docker system prune -a && docker volume prune"
+  }
+}
