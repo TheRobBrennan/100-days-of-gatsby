@@ -145,3 +145,37 @@ validationSchema: Yup.object({
 The code above is very explicit about exactly what Formik is doing. `onChange` -> `handleChange`, `onBlur` -> `handleBlur`, and so on. However, to save you time, `useFormik()` returns a helper method called `formik.getFieldProps()` to make it faster to wire up inputs. Given some field-level info, it returns to you the exact group of onChange, onBlur, value, checked for a given field. You can then spread that on an input, select, or textarea.
 
 Let's take a look at `app/src/components/forms/simple-form-6.js`
+
+##### Leveraging React Context
+
+Our code above is again very explicit about exactly what Formik is doing. `onChange` -> `handleChange`, `onBlur` -> `handleBlur`, and so on. However, we still have to manually pass each input this "prop getter" getFieldProps(). To save you even more time, Formik comes with React Context-powered API/component make life easier and less verbose: `<Formik />`, `<Form />`, `<Field />`, and `<ErrorMessage />`. More explicitly, they use React Context implicitly to connect to the parent `<Formik />` state/methods.
+
+Since these components use React Context, we need to render a React Context Provider that holds our form state and helpers in our tree. If you did this yourself, it would look like:
+
+```jsx
+import React from 'react';
+import { useFormik } from 'formik';
+
+// Create empty context
+const FormikContext = React.createContext({});
+
+// Place all of what's returned by useFormik onto context
+export const Formik = ({ children, ...props }) => {
+  const formikStateAndHelpers = useFormik(props);
+  return (
+    <FormikContext.Provider value={formikStateAndHelpers}>
+      {typeof children === 'function'
+        ? children(formikStateAndHelpers)
+        : children}
+    </FormikContext.Provider>
+  );
+};
+```
+
+Luckily, we've done this for you and a `<Formik>` component that works just like this one comes with the package.
+
+Let's now swap out the `useFormik()` hook for the Formik's `<Formik>` component/render-prop. Since it's a component, we'll convert the object passed to `useFormik()` to JSX, with each key becoming a prop.
+
+Take a look at `app/src/components/forms/simple-form-7.js`
+
+As you can see above, we swapped out `useFormik()` hook and replaced it with the `<Formik>` component. The `<Formik>` accepts a function as its children (a.k.a. a render prop). Its argument is the exact same object returned by `useFormik()` (in fact, `<Formik>` calls `useFormik()` internally!!). Thus, our form works the same as before, except now we can use new components to express ourselves in a more concise manner.
