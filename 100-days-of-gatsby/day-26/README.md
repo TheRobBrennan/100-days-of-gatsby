@@ -137,3 +137,11 @@ validationSchema: Yup.object({
     .required('Required'),
 }),
 ```
+
+#### Simple form reducing boilerplate
+
+##### getFieldProps()
+
+The code above is very explicit about exactly what Formik is doing. `onChange` -> `handleChange`, `onBlur` -> `handleBlur`, and so on. However, to save you time, `useFormik()` returns a helper method called `formik.getFieldProps()` to make it faster to wire up inputs. Given some field-level info, it returns to you the exact group of onChange, onBlur, value, checked for a given field. You can then spread that on an input, select, or textarea.
+
+Let's take a look at `app/src/components/forms/simple-form-6.js`
