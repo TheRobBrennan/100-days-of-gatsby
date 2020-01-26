@@ -37,7 +37,11 @@ $ npm i formik
 
 First, let's review [The Basics](https://jaredpalmer.com/formik/docs/tutorial#the-basics) tutorial.
 
-We'll start by creating a simple form component at creating `app/src/components/forms/simple-form.js`
+#### Simple form with a single field
+
+We'll start by creating a simple form component at creating `app/src/components/forms/simple-form-1.js`
+
+#### Simple form with several fields
 
 Let's add a `firstName` and `lastName` field - we'll build on the previous example by creating `app/src/components/forms/simple-form-2.js`
 
@@ -60,3 +64,9 @@ const handleChange = event => {
   });
 }
 ```
+
+#### Simple form with validation
+
+Next, we'll want to add some validation to our form. Formik keeps track of not only your form's values, but also its error messages and validation. To add validation with JS, let's specify a custom validation function and pass it as `validate` to the `useFormik()` hook. If an error exists, this custom validation function should produce an error object with a matching shape to our `values`/`initialValues`. Again...symmetry...yes...
+
+`formik.errors` is populated via the custom validation function. By default, Formik will validate after each keystroke (change event), each input's blur event, as well as prior to submission. It will only proceed with executing the `onSubmit` function we passed to `useFormik()` if there are no errors (i.e. if our validation function returned {}).
