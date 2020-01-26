@@ -361,3 +361,26 @@ const SignupForm = () => {
 ```
 
 Let's try the above code in `app/src/components/forms/simple-form-9.js` - after we add the `@emotion/core` and `@emotion/styled` modules to our app.
+
+#### Wrapping up
+
+Congratulations! You've created a signup form with Formik that:
+
++ Has complex validation logic and rich error messages
++ Properly displays errors messages to the user at the correct time (after they have blurred a field)
++ Leverages your own custom input components you can use on other forms in your app
+
+Nice work! We hope you now feel like you have a decent grasp on how Formik works.
+
+Check out the final result here: Final Result.
+
+If you have extra time or want to practice your new Formik skills, here are some ideas for improvements that you could make to the signup form which are listed in order of increasing difficulty:
+
++ Disable the submit button while the user is attempted a submit (hint: `formik.isSubmitting`)
++ Add a reset button with `formik.handleReset` or `<button type="reset">`.
++ Prepopulate `initialValues` based on URL query string or props passed to `<SignupForm>`.
++ Change input border color to red when a field has an error and isn't focused
++ Add a shake animation to each field when it displays an error and has been visited
++ Persist form state to the browser's sessionStorage so that form progress is kept inbetween page refreshes
+
+Throughout this tutorial, we touched on Formik concepts including form state, fields, validation, hooks, render props, and React context. For a more detailed explanation of each of these topics, check out the rest of the documentation. To learn more about defining the components and hooks in the tutorial, check out the API reference.
