@@ -179,3 +179,5 @@ Let's now swap out the `useFormik()` hook for the Formik's `<Formik>` component/
 Take a look at `app/src/components/forms/simple-form-7.js`
 
 As you can see above, we swapped out `useFormik()` hook and replaced it with the `<Formik>` component. The `<Formik>` accepts a function as its children (a.k.a. a render prop). Its argument is the exact same object returned by `useFormik()` (in fact, `<Formik>` calls `useFormik()` internally!!). Thus, our form works the same as before, except now we can use new components to express ourselves in a more concise manner.
+
+Take a look at 
