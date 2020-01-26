@@ -82,3 +82,58 @@ While our form works, and our users see each error, it's not a great user experi
 Like `errors` and `values`, Formik can keep track of which fields have been visited. It stores this information in an object called `touched` that also mirrors the shape of `values`/`initialValues`, but each key can only be a boolean `true`/`false`.
 
 To take advantage of `touched`, we can pass `formik.handleBlur` to each input's `onBlur` prop. This function works similarly to `formik.handleChange` in that it uses the `name` attribute to figure out which field to update.
+
+#### Simple form with schema validation with Yup
+
+As you can see above, validation is left up to you. Feel free to write your own validators or use a 3rd-party helper library. Formik's authors/a large portion of its users use Jason Quense's library [Yup](https://github.com/jquense/yup) for object schema validation. [Yup](https://github.com/jquense/yup) has an API that's similar to Joi / React PropTypes but is also small enough for the browser and fast enough for runtime usage. You can try it out here with this REPL.
+
+Since Formik authors/users love Yup so much, Formik has a special configuration option / prop for Yup called `validationSchema` which will automatically transform Yup's validation errors messages into a pretty object whose keys match `values`/`initialValues`/`touched` (just like any custom validation function would have to). Anyways, you can install Yup from NPM/yarn like so...
+
+```sh
+$ npm install yup
+```
+
+To see how Yup works, let's get rid of our custom validation function validate and re-write our validation with Yup and `validationSchema` as `100-days-of-gatsby/day-26/app/src/components/forms/simple-form-5-with-yup-schema-validation.js`
+
+For comparison, here is our validate function in `SimpleForm4`:
+
+```js
+const validate = values => {
+  const errors = {};
+  if (!values.firstName) {
+    errors.firstName = 'Required';
+  } else if (values.firstName.length > 15) {
+    errors.firstName = 'Must be 15 characters or less';
+  }
+
+  if (!values.lastName) {
+    errors.lastName = 'Required';
+  } else if (values.lastName.length > 20) {
+    errors.lastName = 'Must be 20 characters or less';
+  }
+
+  if (!values.email) {
+    errors.email = 'Required';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address';
+  }
+
+  return errors;
+};
+```
+
+Here is our validation schema equivalent using Yup in `SimpleForm5`:
+
+```js
+validationSchema: Yup.object({
+  firstName: Yup.string()
+    .max(15, 'Must be 15 characters or less')
+    .required('Required'),
+  lastName: Yup.string()
+    .max(20, 'Must be 20 characters or less')
+    .required('Required'),
+  email: Yup.string()
+    .email('Invalid email address')
+    .required('Required'),
+}),
+```
