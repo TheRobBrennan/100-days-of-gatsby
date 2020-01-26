@@ -384,3 +384,5 @@ If you have extra time or want to practice your new Formik skills, here are some
 + Persist form state to the browser's sessionStorage so that form progress is kept inbetween page refreshes
 
 Throughout this tutorial, we touched on Formik concepts including form state, fields, validation, hooks, render props, and React context. For a more detailed explanation of each of these topics, check out the rest of the documentation. To learn more about defining the components and hooks in the tutorial, check out the API reference.
+
+Feel free to review the [Resources](https://jaredpalmer.com/formik/docs/resources) available at [https://jaredpalmer.com/formik/docs/resources](https://jaredpalmer.com/formik/docs/resources)
