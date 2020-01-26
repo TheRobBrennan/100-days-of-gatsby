@@ -20,3 +20,55 @@ $ cd 100-days-of-gatsby/day-##
 # Navigate to the app directory
 $ cd app
 ```
+
+## Getting started
+
+For this example, we're going to need to install the `formik` module to our app:
+
+```sh
+# Navigate to our app
+$ cd 100-days-of-gatsby/day-26/app
+
+# Add our formik dependency
+$ npm i formik
+```
+
+### Formik tutorials
+
+First, let's review [The Basics](https://jaredpalmer.com/formik/docs/tutorial#the-basics) tutorial.
+
+We'll start by creating a simple form component:
+
+```js
+// app/src/components/forms/simple-form.js
+import React from 'react';
+import { useFormik } from 'formik';
+
+const SimpleForm = () => {
+  // Pass the useFormik() hook initial form values and a submit function that will
+  // be called when the form is submitted
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+  return (
+    <form onSubmit={formik.handleSubmit}>
+      <label htmlFor="email">Email Address</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        onChange={formik.handleChange}
+        value={formik.values.email}
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default SimpleForm
+```
