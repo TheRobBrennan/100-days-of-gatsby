@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import SimpleForm from '../components/forms/simple-form'
+import SimpleForm from '../components/forms/simple-form-2'
 
 const IndexPage = () => (
   <Layout>

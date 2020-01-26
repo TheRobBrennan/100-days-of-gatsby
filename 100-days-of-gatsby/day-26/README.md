@@ -33,42 +33,30 @@ $ cd 100-days-of-gatsby/day-26/app
 $ npm i formik
 ```
 
-### Formik tutorials
+### Formik tutorial
 
 First, let's review [The Basics](https://jaredpalmer.com/formik/docs/tutorial#the-basics) tutorial.
 
-We'll start by creating a simple form component:
+We'll start by creating a simple form component at creating `app/src/components/forms/simple-form.js`
+
+Let's add a `firstName` and `lastName` field - we'll build on the previous example by creating `app/src/components/forms/simple-form-2.js`
+
+As the tutorial mentions, we should notice the following patterns and symmetry:
+
++ We reuse the same exact change handler function `handleChange` for each HTML input.
++ We pass an `id` and `name` HTML attribute that matches the property we defined in `initialValues`
++ We access the field's value using the same name (`email` -> `formik.values.email`).
+
+If you're familiar with building forms with plain React, you can think of Formik's handleChange as working like this:
 
 ```js
-// app/src/components/forms/simple-form.js
-import React from 'react';
-import { useFormik } from 'formik';
+const [values, setValues] = React.useState({});
 
-const SimpleForm = () => {
-  // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-    },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
+const handleChange = event => {
+  setValues(prevValues => ({
+    ...prevValues,
+    // we use the name to tell formik which key of `values` to update.
+    [event.target.name]: event.target.value
   });
-  return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="email">Email Address</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
-      <button type="submit">Submit</button>
-    </form>
-  );
-};
-
-export default SimpleForm
+}
 ```
