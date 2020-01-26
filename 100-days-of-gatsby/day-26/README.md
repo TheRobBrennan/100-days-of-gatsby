@@ -180,4 +180,35 @@ Take a look at `app/src/components/forms/simple-form-7.js`
 
 As you can see above, we swapped out `useFormik()` hook and replaced it with the `<Formik>` component. The `<Formik>` accepts a function as its children (a.k.a. a render prop). Its argument is the exact same object returned by `useFormik()` (in fact, `<Formik>` calls `useFormik()` internally!!). Thus, our form works the same as before, except now we can use new components to express ourselves in a more concise manner.
 
-Take a look at 
+Take a look at `app/src/components/forms/simple-form-8.js`
+
+The `<Field>` component by default will render an `<input>` component that given a name prop will implicitly grab the respective `onChange`, `onBlur`, `value` props and pass them to the element as well as any props you pass to it. However, since not everything is an input, `<Field>` also accepts a few other props to let you render whatever you want. Some examples..
+
+```jsx
+// <input className="form-input" placeHolder="Jane"  />
+<Field name="firstName" className="form-input" placeholder="Jane" />
+
+// <textarea className="form-textarea"/></textarea>
+<Field name="message" as="textarea"  className="form-input"/>
+
+// <select className="my-select"/>
+<Field name="colors" as="select" className="my-select">
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+</Field>
+
+// with styled-components/emotion
+const MyStyledInput = styled.input`
+  padding: .5em;
+  border: 1px solid #eee;
+  /* ... */
+`
+const MyStyledTextarea = MyStyledInput.withComponent('textarea');
+
+// <input className="czx_123" placeHolder="google.com"  />
+<Field name="website" as={MyStyledInput} placeHolder="google.com"/>
+
+// <textarea  placeHolder="Post a message..." rows={5}></textarea>
+<Field name="message" as={MyStyledTextArea} placeHolder="Post a message.." rows={4}/>
+```
