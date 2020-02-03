@@ -33,9 +33,12 @@ Great repo showing integration with Gatsby at [https://github.com/thetrevorharmo
 
 ### 12:30pm Smoothly inclusive: React component library documentation with Gatsby and MDX, Kathleen McMahon
 
-### 12:45pm -Lunch-
-
 ### 1:45pm Unconf session 1
+
+Authentication and GraphQL
+Ecommerce and React
+Gatsby themes and headless CMSes
+Building beautiful websites and testing (?)
 
 ### 2:15pm -Break-
 
