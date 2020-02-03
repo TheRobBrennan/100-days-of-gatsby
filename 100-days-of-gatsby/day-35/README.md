@@ -10,13 +10,26 @@ Today's focus is on reflecting on the [Gatsby Days LA](https://www.youtube.com/w
 
 ### 10:30am What separates the fastest Gatsby sites from everybody else, Grant Glidewell
 
-### 10:45am -Break-
-
 ### 11:15am How Tinder creates Wordpress blogs in React instead of PHP, Kyle Boss
 
 ### 11:45am Highly Dynamic WordPress Sites with Gatsby, Zac Gordon
 
 ### 12:00pm Sell Things Fast with Gatsby and Shopify, Trevor Harmon
+
+Great repo showing integration with Gatsby at [https://github.com/thetrevorharmon/sell-things-fast](https://github.com/thetrevorharmon/sell-things-fast)
+
+![screenshot-00.png](screenshot-00.png)
+![screenshot-01.png](screenshot-01.png)
+![screenshot-02.png](screenshot-02.png)
+![screenshot-03.png](screenshot-03.png)
+![screenshot-04.png](screenshot-04.png)
+![screenshot-05.png](screenshot-05.png)
+![screenshot-06.png](screenshot-06.png)
+![screenshot-07.png](screenshot-07.png)
+![screenshot-08.png](screenshot-08.png)
+![screenshot-09.png](screenshot-09.png)
+![screenshot-10.png](screenshot-10.png)
+![screenshot-11.png](screenshot-11.png)
 
 ### 12:30pm Smoothly inclusive: React component library documentation with Gatsby and MDX, Kathleen McMahon
 
