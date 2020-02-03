@@ -40,11 +40,9 @@ Ecommerce and React
 Gatsby themes and headless CMSes
 Building beautiful websites and testing (?)
 
-### 2:15pm -Break-
-
 ### 2:25pm Unconf session 2
 
-### 2:55pm -Coffee Break-
+Topics TBD
 
 ### 3:25pm Gatsby in East Africa, Gatare Libère
 
