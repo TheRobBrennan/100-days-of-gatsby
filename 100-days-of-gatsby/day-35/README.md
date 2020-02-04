@@ -35,14 +35,7 @@ Great repo showing integration with Gatsby at [https://github.com/thetrevorharmo
 
 ### 1:45pm Unconf session 1
 
-Authentication and GraphQL
-Ecommerce and React
-Gatsby themes and headless CMSes
-Building beautiful websites and testing (?)
-
 ### 2:25pm Unconf session 2
-
-Topics TBD
 
 ### 3:25pm Gatsby in East Africa, Gatare Libère
 
