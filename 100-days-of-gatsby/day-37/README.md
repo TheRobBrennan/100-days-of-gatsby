@@ -4,4 +4,4 @@ Today's focus is on resuming the [Gatsby Ecommerce](https://www.leveluptutorials
 
 ## Course progress
 
-Latest updates for this are in my repo at [https://github.com/TheRobBrennan/explore-gatsby-ecommerce](https://github.com/TheRobBrennan/explore-gatsby-ecommerce)
+Latest updates for this are in my repo at [https://github.com/TheRobBrennan/explore-gatsby-ecommerce-shopify](https://github.com/TheRobBrennan/explore-gatsby-ecommerce-shopify)
