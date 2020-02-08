@@ -1,0 +1,3 @@
+# Day 39 - Saturday, February 8th, 2020
+
+Today I, unfortunately, have to put my desire to integrate with [Shopify](https://www.shopify.com) on hold. I was totally impressed with the features and functionality I was seeing - eager to incorporate it into my site. However...After taking a peek at [https://www.shopify.com/legal/terms-payments-us#prohibited-businesses](https://www.shopify.com/legal/terms-payments-us#prohibited-businesses) it became apparent that some items I intended to sell - specifically, event tickets - are prohibited from being sold through [Shopify](https://www.shopify.com) in the US.
