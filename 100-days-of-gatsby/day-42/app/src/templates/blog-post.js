@@ -8,7 +8,8 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
 // Default to the development mode API key
-const SNIPCART_TEST_API_KEY = 'OWQ1NDc3ODItNTY2MC00NzQ1LTlkOGUtMTZkMzBiNzA3NGQxNjM3MTcwNjE5OTQ0NTQ4Nzk1'
+const SNIPCART_TEST_API_KEY =
+  "OWQ1NDc3ODItNTY2MC00NzQ1LTlkOGUtMTZkMzBiNzA3NGQxNjM3MTcwNjE5OTQ0NTQ4Nzk1"
 const SNIPCART_API_KEY = process.env.SNIPCART_API_KEY || SNIPCART_TEST_API_KEY
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -20,9 +21,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     <Layout location={location} title={siteTitle}>
       <Helmet htmlAttributes={{ lang: "en " }}>
         <title>${siteTitle}</title>
-        <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.7/default/snipcart.css" />
-        <div id="snipcart" data-api-key={SNIPCART_API_KEY} hidden></div>
-        <script src="https://cdn.snipcart.com/themes/v3.0.7/default/snipcart.js"></script>
+        <link
+          rel='stylesheet'
+          href='https://cdn.snipcart.com/themes/v3.0.7/default/snipcart.css'
+        />
+        <div id='snipcart' data-api-key={SNIPCART_API_KEY} hidden></div>
+        <script src='https://cdn.snipcart.com/themes/v3.0.7/default/snipcart.js'></script>
       </Helmet>
       <SEO
         title={post.frontmatter.title}
@@ -96,16 +100,23 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt
       html
+      # Modify frontmatter to pull new fields we have created in our markdown files
+      # Please see 100-days-of-gatsby/day-42/app/content/blog/bow-ties/index.md for an example
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        price
+        id
+        path
         description
+        image
       }
     }
   }
