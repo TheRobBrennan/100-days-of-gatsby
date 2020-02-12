@@ -4,7 +4,7 @@ layout: post
 date: 2018-07-21
 id: 1
 price: 67.89
-image: "fireworks"
+image: ""
 path: "/fireworks/"
 description: "Fireworks are a noble, traditional way to emphasize the greatness of an event."
 ---
