@@ -7,27 +7,47 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
+import BuyButton from "../components/BuyButton"
+
 // Default to the development mode API key
 const SNIPCART_TEST_API_KEY =
   "OWQ1NDc3ODItNTY2MC00NzQ1LTlkOGUtMTZkMzBiNzA3NGQxNjM3MTcwNjE5OTQ0NTQ4Nzk1"
-const SNIPCART_API_KEY = process.env.SNIPCART_API_KEY || SNIPCART_TEST_API_KEY
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
+  const images = post.frontmatter.image.map(x => ({
+    name: x.name,
+    src: require(`./../../content/blog${post.frontmatter.path}${x.src}.jpg`),
+  }))
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Helmet htmlAttributes={{ lang: "en " }}>
-        <title>${siteTitle}</title>
-        <link
-          rel='stylesheet'
-          href='https://cdn.snipcart.com/themes/v3.0.7/default/snipcart.css'
-        />
-        <div id='snipcart' data-api-key={SNIPCART_API_KEY} hidden></div>
-        <script src='https://cdn.snipcart.com/themes/v3.0.7/default/snipcart.js'></script>
-      </Helmet>
+      <Helmet
+        htmlAttributes={{ lang: "en" }}
+        title={`${post.frontmatter.title} | ${siteTitle}`}
+        link={[
+          {
+            href: "https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css",
+            rel: "stylesheet",
+            type: "text/css",
+          },
+        ]}
+        script={[
+          {
+            type: "text/javascript",
+            src:
+              "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js",
+          },
+          {
+            type: "text/javascript",
+            id: "snipcart",
+            "data-api-key": process.env.SNIPCART_API_KEY || SNIPCART_TEST_API_KEY,
+            src: "https://cdn.snipcart.com/scripts/2.0/snipcart.js",
+          },
+        ]}
+      />
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -53,23 +73,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </p>
         </header>
 
-        {post.frontmatter.images && (
-          <img src={post.frontmatter.images[0].src} alt={post.frontmatter.title} />
-        )}
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <button
-          className='snipcart-add-item buyBtn'
-          data-item-id={post.frontmatter.id}
-          data-item-price={post.frontmatter.price}
-          data-item-image={post.frontmatter.image}
-          data-item-name={post.frontmatter.title}
-          data-item-description={post.frontmatter.description}
-          data-item-url={
-            "http://snipcart-gatsby.netlify.com" + post.frontmatter.path
-          }
-        >
-          Buy
-        </button>
+        <BuyButton post={post.frontmatter} images={images} />
         <p />
         <footer>
           <Bio />
@@ -127,7 +132,7 @@ export const pageQuery = graphql`
         id
         path
         description
-        images {
+        image {
           name
           src
         }
