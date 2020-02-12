@@ -1,5 +1,8 @@
 import React, { useState } from "react"
 
+// e.g. "https://snipcart-react-gatsby.netlify.com"
+const STORE_URL = process.env.STORE_URL || "http://snipcart-react-gatsby.netlify.com"
+
 var BuyButton = React.memo(({ post, images }) => {
   const [selected, setSelected] = post.customField
     ? useState(post.customField.values[0])
@@ -30,6 +33,7 @@ var BuyButton = React.memo(({ post, images }) => {
           ))}
         </select>
       )}
+      <p />
       <button
         data-item-custom1-name={post.customField ? post.customField.name : null}
         data-item-custom1-value={selected}
@@ -51,9 +55,9 @@ var BuyButton = React.memo(({ post, images }) => {
         data-item-image={choosenImgSrc}
         data-item-name={post.title}
         data-item-description={post.description}
-        data-item-url={"https://snipcart-react-gatsby.netlify.com/" + post.path}
+        data-item-url={STORE_URL + post.path}
       >
-        Buy for {post.price}$
+        Buy for ${post.price}
       </button>
     </div>
   )
