@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    title: `[DEMO] Snipcart`,
+    author: `Rob Brennan`,
+    description: `A starter blog exploring Gatsby and Snipcart integration`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `therobbrennan`,
     },
   },
   plugins: [
