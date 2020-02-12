@@ -52,12 +52,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.date}
           </p>
         </header>
+
+        {post.frontmatter.image && (
+          <img src={post.frontmatter.image} alt={post.frontmatter.title} />
+        )}
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <button
+          className='snipcart-add-item buyBtn'
+          data-item-id={post.frontmatter.id}
+          data-item-price={post.frontmatter.price}
+          data-item-image={post.frontmatter.image}
+          data-item-name={post.frontmatter.title}
+          data-item-description={post.frontmatter.description}
+          data-item-url={
+            "http://snipcart-gatsby.netlify.com" + post.frontmatter.path
+          }
+        >
+          Buy
+        </button>
+        <p />
         <footer>
           <Bio />
         </footer>
