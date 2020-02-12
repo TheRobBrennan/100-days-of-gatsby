@@ -16,4 +16,7 @@ $ npx gatsby new app
 
 # Navigate to the app directory
 $ cd app
+
+# Start our site in development mode
+$ npm run start
 ```
