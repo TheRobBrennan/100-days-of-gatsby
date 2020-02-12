@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 
-// e.g. "https://snipcart-react-gatsby.netlify.com"
-const STORE_URL = process.env.STORE_URL || "http://snipcart-react-gatsby.netlify.com"
+const STORE_URL = process.env.STORE_URL || "https://100-days-of-gatsby.now.sh"
 
 var BuyButton = React.memo(({ post, images }) => {
   const [selected, setSelected] = post.customField
@@ -18,7 +17,7 @@ var BuyButton = React.memo(({ post, images }) => {
       {post.customField && (
         <select
           id={post.customField.name}
-          onChange={e => setSelected(e.target.value)}
+          onBlur={e => setSelected(e.target.value)}
           value={selected}
           style={{
             borderRadius: "5px",
