@@ -3,7 +3,7 @@ title: Bow Ties
 layout: post
 date: 2018-07-21
 id: 2
-image:
+images:
   - name: 'Blue Red'
     src: 'blue-red'
   - name: 'White Blue'
