@@ -53,8 +53,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </p>
         </header>
 
-        {post.frontmatter.image && (
-          <img src={post.frontmatter.image} alt={post.frontmatter.title} />
+        {post.frontmatter.images && (
+          <img src={post.frontmatter.images[0].src} alt={post.frontmatter.title} />
         )}
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <button
@@ -127,7 +127,7 @@ export const pageQuery = graphql`
         id
         path
         description
-        image {
+        images {
           name
           src
         }
