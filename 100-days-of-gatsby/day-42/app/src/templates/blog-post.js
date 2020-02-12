@@ -120,8 +120,6 @@ export const pageQuery = graphql`
       id
       excerpt
       html
-      # Modify frontmatter to pull new fields we have created in our markdown files
-      # Please see 100-days-of-gatsby/day-42/app/content/blog/bow-ties/index.md for an example
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
@@ -129,7 +127,14 @@ export const pageQuery = graphql`
         id
         path
         description
-        image
+        image {
+          name
+          src
+        }
+        customField {
+          name
+          values
+        }
       }
     }
   }
