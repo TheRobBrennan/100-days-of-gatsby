@@ -4,7 +4,7 @@ layout: post
 date: 2018-07-21
 id: 3
 price: 8.50
-image: ""
+# image: ""
 path: "/dry-martini/"
 description: "The taste of excellence."
 ---
