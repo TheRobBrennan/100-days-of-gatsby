@@ -11,8 +11,8 @@ One option that popped up was [Snipcart](https://snipcart.com) - offering the ab
 To create a new Gatsby app, I will use `npx` to create a new [Gatsby](https://www.gatsbyjs.com) app using the latest version of the [Gatsby CLI](https://www.gatsbyjs.com):
 
 ```sh
-# Generate a new app using the latest version of the Gatsby CLI
-$ npx gatsby new app
+# Generate a new app using the latest version of the Gatsby CLI and the Gatsby Starter Blog template
+$ npx gatsby new app https://github.com/gatsbyjs/gatsby-starter-blog
 
 # Navigate to the app directory
 $ cd app
