@@ -1,3 +1,8 @@
+// Snipcart
+const SNIPCART_TEST_API_KEY = "OWQ1NDc3ODItNTY2MC00NzQ1LTlkOGUtMTZkMzBiNzA3NGQxNjM3MTcwNjE5OTQ0NTQ4Nzk1"
+// Default to the test API key
+const SNIPCART_API_KEY = process.env.SNIPCART_API_KEY || SNIPCART_TEST_API_KEY
+
 module.exports = {
   siteMetadata: {
     title: `[DEMO] Snipcart`,
@@ -73,6 +78,21 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-snipcartv3',
+      options: {
+        apiKey: SNIPCART_API_KEY,
+        // Explicitly set to false for none; otherwise it will default to a jquery include
+        jquery: false,
+        /**
+         * Details for additional options can be found at https://github.com/danielholdsworth/gatsby-plugin-snipcartv3
+         *
+         * autopop: false,  // Determines whether the cart should open automatically when a product is added
+         * js: '',          // Use this if you want to point to a Snipcart JavaScript file
+         * styles: '',      // Use this if you want to point to a Snipcart stylesheet
+         */
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
