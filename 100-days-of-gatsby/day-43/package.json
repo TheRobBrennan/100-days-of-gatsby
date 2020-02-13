@@ -1,0 +1,11 @@
+{
+  "name": "day-43",
+  "version": "0.0.0",
+  "description": "Revisit Gatsby and Snipcart v3",
+  "keywords": [],
+  "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
+  "license": "ISC",
+  "scripts": {
+    "start": "cd app && npm run start"
+  }
+}
