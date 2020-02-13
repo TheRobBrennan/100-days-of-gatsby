@@ -7,11 +7,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
+// Snipcart configuration is defined in gatsby-config.js
 import BuyButton from "../components/BuyButton"
-
-// Default to the development mode API key
-const SNIPCART_TEST_API_KEY =
-  "OWQ1NDc3ODItNTY2MC00NzQ1LTlkOGUtMTZkMzBiNzA3NGQxNjM3MTcwNjE5OTQ0NTQ4Nzk1"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -27,26 +24,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <Helmet
         htmlAttributes={{ lang: "en" }}
         title={`${post.frontmatter.title} | ${siteTitle}`}
-        link={[
-          {
-            href: "https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css",
-            rel: "stylesheet",
-            type: "text/css",
-          },
-        ]}
-        script={[
-          // {
-          //   type: "text/javascript",
-          //   src:
-          //     "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js",
-          // },
-          // {
-          //   type: "text/javascript",
-          //   id: "snipcart",
-          //   "data-api-key": process.env.SNIPCART_API_KEY || SNIPCART_TEST_API_KEY,
-          //   src: "https://cdn.snipcart.com/scripts/2.0/snipcart.js",
-          // },
-        ]}
       />
       <SEO
         title={post.frontmatter.title}
