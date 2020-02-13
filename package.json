@@ -7,8 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm start",
-    "start": "cd 100-days-of-gatsby/day-42 && npm run build",
-    "stop": "cd 100-days-of-gatsby/day-42 && npm run stop",
+    "start": "cd 100-days-of-gatsby/day-43 && npm run start",
+    "stop": "cd 100-days-of-gatsby/day-43 && npm run stop",
     "docker:nuke": "docker system prune -a && docker volume prune",
     "deploy": "npm run deploy:zeit-now",
     "deploy:zeit-now": "now --prod"
